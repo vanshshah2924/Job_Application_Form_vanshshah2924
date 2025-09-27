@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+</head>
+<body>
+    <h2>Job Application Form</h2>
+    <form >
+       <label for="fullname">Enter Full Name : </label> <input type="text" id="fullname" placeholder="Enter Your Full Name" required> <br><br>
+       <label for="email">Email Address : </label> <input type="email" id="email" placeholder="Enter Your Mail" required>  <label for="phonenumber"> Phone Number : </label> <input type="tel" id="phonenumber" placeholder="Enter Your Phone Number" required> <br><br>
+       <label for="dob">Date Of Birth : </label><input type="date" id="dob" required><br><br>
+       <label for="gender">Gender : </label> <input type="radio" name="gender" id="gender"> Male <input type="radio" name="gender" id="gender"> Female <br><br>
+       <label for="skills">Skills : </label> <input type="checkbox" name="skills" id="skills"> HTML <input type="checkbox" name="skills" id="skills"> CSSL <input type="checkbox" name="skills" id="skills"> JAVASCRIPT <input type="checkbox" name="skills" id="skills"> REACT JS <input type="checkbox" name="skills" id="skills"> NEXT JS <br><br>
+       <label for="resume">Upload Resume : </label> <input type="file" name="resume" id="resume" required><br><br>
+       <label for="department">Choose Department : </label><select name="department" id="department" required>
+        <option value="HR DEpartment">HR Department</option>
+        <option value="Administration">Administration</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Sales">Sales</option>
+       </select> <br><br>
+       <label for="salary">Expacted Salary : </label> <input type="text" name="salary" id="salary" placeholder="Expected Salary" required><br><br>
+       <label for="portfolio-url">Portfolio Website : </label> <input type="url" name="Portfolio Website" id="portfolio-url" required><br><br>
+       <label for="d&t">Prefered Interview Date & Time : </label> <input type="datetime-local" name="d&t" id="d&t" required><br><br>
+       <label for="short-bio">Short Bio/Cover Letter : </label><br><textarea rows="10" cols="60" placeholder="Short Bio/Cover Letter"></textarea> <br><br>
+       <input type="checkbox" name="agree" id="agree"> <label for="agree">Agree to Terms & Conditions</label><br><br>
+       <button type="reset">Reset</button>
+       <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
