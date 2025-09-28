@@ -1,36 +1,28 @@
 /* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: #f0f4f8;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    color: #333;
-    animation: bgAnimate 15s ease infinite;
-}
-
-@keyframes bgAnimate {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
 }
 
 /* Form Container */
 form {
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     padding: 40px 50px;
     border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     max-width: 700px;
     width: 100%;
-    animation: formFade 1s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes formFade {
-    from {opacity: 0; transform: translateY(-50px);}
-    to {opacity: 1; transform: translateY(0);}
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 /* Form Title */
@@ -39,8 +31,15 @@ h2 {
     margin-bottom: 30px;
     font-size: 2rem;
     color: #4e3cae;
-    text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
 }
 
 /* Input Fields */
@@ -55,9 +54,8 @@ textarea,
 select {
     width: 100%;
     padding: 12px 15px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 2px solid #ccc;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -66,14 +64,9 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-    border-color: #764ba2;
-    box-shadow: 0 0 10px rgba(118,75,162,0.3);
+    border-color: #4e3cae;
+    box-shadow: 0 0 8px rgba(78,60,174,0.3);
     outline: none;
-}
-
-/* Labels */
-label {
-    font-weight: 500;
 }
 
 /* Radio & Checkbox */
@@ -81,7 +74,7 @@ input[type="radio"],
 input[type="checkbox"] {
     width: auto;
     margin-right: 8px;
-    accent-color: #764ba2;
+    accent-color: #4e3cae;
 }
 
 /* Buttons */
@@ -91,20 +84,20 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 button[type="submit"] {
-    background: #764ba2;
+    background: #4e3cae;
     color: #fff;
 }
 
 button[type="submit"]:hover {
-    background: #667eea;
+    background: #6a50d1;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(118,75,162,0.3);
+    box-shadow: 0 8px 20px rgba(78,60,174,0.3);
 }
 
 button[type="reset"] {
@@ -115,18 +108,12 @@ button[type="reset"]:hover {
     background: #ccc;
 }
 
-/* Animations for inputs */
-input, textarea, select {
-    transform: translateY(20px);
-    opacity: 0;
-    animation: fadeInUp 0.5s forwards;
+/* Responsive */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 30px 25px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
 }
-
-input:nth-of-type(1) { animation-delay: 0.1s; }
-input:nth-of-type(2) { animation-delay: 0.2s; }
-input:nth-of-type(3) { animation-delay: 0.3s; }
-input:nth-of-type(4) { animation-delay: 0.4s; }
-input:nth-of-type(5) { animation-delay: 0.5s; }
-textarea { animation-delay: 0.6s; }
-select { animation-delay: 0.7s; }
-button { animation-delay: 0.8s; }
