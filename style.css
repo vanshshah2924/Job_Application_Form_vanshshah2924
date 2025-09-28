@@ -11,11 +11,10 @@ body {
     min-height: 100vh;
     margin: 0;
     color: #333;
-    padding: 20px;
 }
 
-/* Form Styles */
-form {
+/* Form Container */
+.form-container {
     background: #fff;
     padding: 40px 50px;
     border-radius: 20px;
@@ -23,14 +22,14 @@ form {
     max-width: 700px;
     width: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 2rem;
 }
 
-form:hover {
+.form-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
-/* Form Title */
 h2 {
     text-align: center;
     margin-bottom: 35px;
@@ -39,49 +38,64 @@ h2 {
     font-weight: 600;
 }
 
-/* Inputs, Select, Textarea */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="url"],
-input[type="datetime-local"],
-textarea,
-select,
-input[type="file"] {
-    width: calc(100% - 30px);
-    padding: 12px 15px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+/* Form Groups */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 14px 15px;
     border: 2px solid #ddd;
+    border-radius: 10px;
     font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
-    display: block;
-    background: #fff;
+    background: transparent;
 }
 
-input:focus,
-textarea:focus,
-select:focus,
-input[type="file"]:focus {
+input:focus, textarea:focus, select:focus {
     border-color: #4e3cae;
     box-shadow: 0 0 10px rgba(78,60,174,0.2);
 }
 
-/* Labels */
+/* Floating Labels */
 label {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    color: #999;
+    pointer-events: none;
     font-size: 1rem;
-    color: #555;
+    transition: 0.3s ease all;
 }
 
-/* Radio and Checkbox */
-input[type="radio"],
-input[type="checkbox"] {
+input:focus + label,
+textarea:focus + label,
+select:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label,
+select:not([value=""]) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.85rem;
+    color: #4e3cae;
+    background: #fff;
+    padding: 0 5px;
+}
+
+/* Radio & Checkbox */
+input[type="radio"], input[type="checkbox"] {
     width: auto;
     margin-right: 8px;
     accent-color: #4e3cae;
+}
+
+.gender label, .skills label, .terms label {
+    position: static;
+    font-size: 1rem;
+    margin-right: 15px;
 }
 
 /* Textarea */
@@ -91,9 +105,15 @@ textarea {
 }
 
 /* Buttons */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
 button {
     padding: 12px 25px;
-    margin-right: 10px;
+    margin-left: 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -123,14 +143,17 @@ button[type="reset"]:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    form {
+    .form-container {
         padding: 30px 25px;
     }
     h2 {
         font-size: 1.8rem;
     }
+    .form-buttons {
+        flex-direction: column;
+    }
     button {
-        width: 100%;
+        margin-left: 0;
         margin-bottom: 10px;
     }
 }
