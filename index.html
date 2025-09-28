@@ -7,28 +7,90 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Job Application Form</h2>
-    <form >
-       <label for="fullname">Enter Full Name : </label> <input type="text" id="fullname" placeholder="Enter Your Full Name" required> <br><br>
-       <label for="email">Email Address : </label> <input type="email" id="email" placeholder="Enter Your Mail" required>  <label for="phonenumber"> Phone Number : </label> <input type="tel" id="phonenumber" placeholder="Enter Your Phone Number" required> <br><br>
-       <label for="dob">Date Of Birth : </label><input type="date" id="dob" required><br><br>
-       <label for="gender">Gender : </label> <input type="radio" name="gender" id="gender"> Male <input type="radio" name="gender" id="gender"> Female <br><br>
-       <label for="skills">Skills : </label> <input type="checkbox" name="skills" id="skills"> HTML <input type="checkbox" name="skills" id="skills"> CSSL <input type="checkbox" name="skills" id="skills"> JAVASCRIPT <input type="checkbox" name="skills" id="skills"> REACT JS <input type="checkbox" name="skills" id="skills"> NEXT JS <br><br>
-       <label for="resume">Upload Resume : </label> <input type="file" name="resume" id="resume" required><br><br>
-       <label for="department">Choose Department : </label><select name="department" id="department" required>
-        <option value="HR DEpartment">HR Department</option>
-        <option value="Administration">Administration</option>
-        <option value="Marketing">Marketing</option>
-        <option value="Sales">Sales</option>
-       </select> <br><br>
-       <label for="salary">Expacted Salary : </label> <input type="text" name="salary" id="salary" placeholder="Expected Salary" required><br><br>
-       <label for="portfolio-url">Portfolio Website : </label> <input type="url" name="Portfolio Website" id="portfolio-url" required><br><br>
-       <label for="d&t">Prefered Interview Date & Time : </label> <input type="datetime-local" name="d&t" id="d&t" required><br><br>
-       <label for="short-bio">Short Bio/Cover Letter : </label><br><textarea rows="10" cols="60" placeholder="Short Bio/Cover Letter"></textarea> <br><br>
-       <input type="checkbox" name="agree" id="agree"> <label for="agree">Agree to Terms & Conditions</label><br><br>
-       <button type="reset">Reset</button>
-       <button type="submit">Submit</button>
-    </form>
+    <div class="form-container">
+        <h2>Job Application Form</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" id="fullname" placeholder=" " required>
+                <label for="fullname">Enter Full Name</label>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email Address</label>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="phonenumber" placeholder=" " required>
+                <label for="phonenumber">Phone Number</label>
+            </div>
+
+            <div class="form-group">
+                <input type="date" id="dob" required>
+                <label for="dob">Date Of Birth</label>
+            </div>
+
+            <div class="form-group gender">
+                <label>Gender:</label>
+                <input type="radio" name="gender" id="male" required> <label for="male" class="small-label">Male</label>
+                <input type="radio" name="gender" id="female"> <label for="female" class="small-label">Female</label>
+            </div>
+
+            <div class="form-group skills">
+                <label>Skills:</label>
+                <input type="checkbox" name="skills" id="html"> <label for="html" class="small-label">HTML</label>
+                <input type="checkbox" name="skills" id="css"> <label for="css" class="small-label">CSS</label>
+                <input type="checkbox" name="skills" id="js"> <label for="js" class="small-label">JavaScript</label>
+                <input type="checkbox" name="skills" id="react"> <label for="react" class="small-label">React JS</label>
+                <input type="checkbox" name="skills" id="next"> <label for="next" class="small-label">Next JS</label>
+            </div>
+
+            <div class="form-group">
+                <input type="file" id="resume" required>
+                <label for="resume">Upload Resume</label>
+            </div>
+
+            <div class="form-group">
+                <select name="department" id="department" required>
+                    <option value="" disabled selected></option>
+                    <option value="HR Department">HR Department</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                </select>
+                <label for="department">Choose Department</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="salary" placeholder=" " required>
+                <label for="salary">Expected Salary</label>
+            </div>
+
+            <div class="form-group">
+                <input type="url" id="portfolio-url" placeholder=" " required>
+                <label for="portfolio-url">Portfolio Website</label>
+            </div>
+
+            <div class="form-group">
+                <input type="datetime-local" id="d&t" required>
+                <label for="d&t">Preferred Interview Date & Time</label>
+            </div>
+
+            <div class="form-group">
+                <textarea id="short-bio" placeholder=" " required></textarea>
+                <label for="short-bio">Short Bio / Cover Letter</label>
+            </div>
+
+            <div class="form-group terms">
+                <input type="checkbox" id="agree" required>
+                <label for="agree">Agree to Terms & Conditions</label>
+            </div>
+
+            <div class="form-buttons">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
-
